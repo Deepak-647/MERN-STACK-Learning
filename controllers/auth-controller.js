@@ -20,9 +20,10 @@ console.log(error)
 }
 const register = async (req,res) => {
     try{
+        console.log(req.body)
         res
         .status(200)
-        .send("Welcome to registration page using controllers");
+        .json({message: req.body});
     }catch(error){
         console.log(error)
     }
