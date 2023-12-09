@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
+const router = require('./routing/auth-routing')
 
- app.get('/',(req,res)=>{
-    res.status(200).send("Welcome TO the World")
- })
+app.use("/api/auth",router);
 
  const PORT = 5000;
  app.listen(PORT,() => {
