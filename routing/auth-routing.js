@@ -8,20 +8,14 @@
 
 const express = require("express");
 const router = express.Router();
+// const {home,register} = require('../controllers/auth-controller')
+const authController = require('../controllers/auth-controller')
 
-// app.get("/", (req, res) => {
-//   res.status(200).send("Welcome to thapa technical Mern Series Updated");
-// });
 
-router.route("/").get((req, res) => {
-  res.status(200).send("Mern Series Updated");
-});
+ 
 
-// app.get("/register", (req, res) => {
-//   res.status(200).json({ msg: "registration successful" });
-// });
-router.route("/register").get((req, res) => {
-  res.status(200).send("registration successful from router");
-});
+router.route("/").get(authController.home);
+
+router.route("/register").get(authController.register);
 
 module.exports = router;
