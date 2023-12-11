@@ -68,7 +68,8 @@ try{
     res.status(401).json({message: "Invalid email or password"})
   }
 }catch(error){
-res.status(500).json("internal server error");
+// res.status(500).json("internal server error");
+next(error)
 }
 }
 
