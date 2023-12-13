@@ -1,10 +1,19 @@
 require("dotenv").config();
 const express = require('express');
+const cors = require("cors");
 const app = express();
 const authRoute = require('./routing/auth-routing')
 const connectDb = require('./utils/db');
 const errorMiddleware = require("./middlewares/error-middleware");
 const contactRoute = require("./routing/contact-router")
+
+//handling cors policy issue
+const corsOptions ={
+  origin:"http://localhost:5173",
+  methods:"GET,POST,PUT,DELETE,PATCH,HEAD",
+  credentials :true,
+}
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
