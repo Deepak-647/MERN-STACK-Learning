@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require("cors");
 const app = express();
 const authRoute = require('./routing/auth-routing')
+const serviceRoute = require('./routing/service-router')
 const connectDb = require('./utils/db');
 const errorMiddleware = require("./middlewares/error-middleware");
 const contactRoute = require("./routing/contact-router")
@@ -19,6 +20,7 @@ app.use(express.json());
 
 app.use("/api/auth",authRoute);
 app.use("/api/form",contactRoute);
+app.use("/api/data",serviceRoute);
 
 app.use(errorMiddleware)
 
