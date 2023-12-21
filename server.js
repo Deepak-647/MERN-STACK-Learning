@@ -10,8 +10,8 @@ const contactRoute = require("./routing/contact-router")
 
 //handling cors policy issue
 const corsOptions ={
-  origin:"http://localhost:5173",
-  methods:"GET,POST,PUT,DELETE,PATCH,HEAD",
+  origin:["http://localhost:5173"],
+  methods:["GET,POST],
   credentials :true,
 }
 app.use(cors(corsOptions));
