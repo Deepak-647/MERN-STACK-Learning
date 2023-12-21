@@ -10,8 +10,8 @@ const contactRoute = require("./routing/contact-router")
 
 //handling cors policy issue
 const corsOptions ={
-  origin:["http://localhost:5173"],
-  methods:["GET","POST"],
+  origin:["https://beyond-tech.netlify.app"],
+  methods:["GET","POST","PUT","DELETE","PATCH","HEAD"],
   credentials :true,
 }
 app.use(cors(corsOptions));
